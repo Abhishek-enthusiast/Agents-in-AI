@@ -65,7 +65,7 @@ I've organized everything category-wise to make it easier to navigate.
 * **PowerPoint** – Presentation materials.
 * **Git & GitHub** – Version control and project management.
 
-## 🚀 Running the Programs
+##  Running the Programs 
 
 Most of the practical implementations are written in Python.
 
@@ -99,7 +99,7 @@ You can follow the same process for the other Python files.
 
 Make sure Python is installed on your system before running the programs.
 
-## 🎯 About This Repository
+##  About This Repository
 
 The idea behind this repository is simple: keep all my Agents in AI coursework and implementations organized in one place.
 
@@ -107,7 +107,7 @@ Working on these programs has helped me understand how different AI techniques a
 
 I'll continue updating the repository as I work on more topics throughout the course.
 
-## 👨‍💻 Author
+##  Author
 
 **Abhishek**
 
