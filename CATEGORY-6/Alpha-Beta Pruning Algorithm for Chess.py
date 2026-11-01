@@ -1,0 +1,91 @@
+import math
+
+PIECE_VALUES = {
+    'P': 10, 'N': 30, 'B': 30, 'R': 50, 'Q': 90, 'K': 900,
+    'p': -10, 'n': -30, 'b': -30, 'r': -50, 'q': -90, 'k': -900,
+    '.': 0
+}
+
+class ChessBoard:
+    def __init__(self, board=None, turn='W'):
+        if board is not None:
+            self.board = board
+        else:
+            self.board = [
+                ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
+                ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+                ['.', '.', '.', '.', '.', '.', '.', '.'],
+                ['.', '.', '.', '.', '.', '.', '.', '.'],
+                ['.', '.', '.', '.', '.', '.', '.', '.'],
+                ['.', '.', '.', '.', '.', '.', '.', '.'],
+                ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+                ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R']
+            ]
+        self.turn = turn
+
+    def evaluate(self):
+        score = 0
+        for r in range(8):
+            for c in range(8):
+                score += PIECE_VALUES[self.board[r][c]]
+        return score
+
+    def get_moves(self):
+        moves = []
+        next_turn = 'B' if self.turn == 'W' else 'W'
+        for r in range(8):
+            for c in range(8):
+                piece = self.board[r][c]
+                if (self.turn == 'W' and piece.isupper()) or (self.turn == 'B' and piece.islower()):
+                    for dr in [-1, 0, 1]:
+                        for dc in [-1, 0, 1]:
+                            if dr == 0 and dc == 0:
+                                continue
+                            nr, nc = r + dr, c + dc
+                            if 0 <= nr < 8 and 0 <= nc < 8:
+                                target = self.board[nr][nc]
+                                if target == '.' or (self.turn == 'W' and target.islower()) or (self.turn == 'B' and target.isupper()):
+                                    new_board = [row[:] for row in self.board]
+                                    new_board[nr][nc] = piece
+                                    new_board[r][c] = '.'
+                                    moves.append(ChessBoard(new_board, next_turn))
+        return moves
+
+
+def alphabeta_chess(board, depth, alpha, beta, is_maximizing):
+    if depth == 0:
+        return board.evaluate(), None
+
+    moves = board.get_moves()
+    if not moves:
+        return board.evaluate(), None
+
+    best_move = None
+    if is_maximizing:
+        best_val = -math.inf
+        for move in moves:
+            val, _ = alphabeta_chess(move, depth - 1, alpha, beta, False)
+            if val > best_val:
+                best_val = val
+                best_move = move
+            alpha = max(alpha, best_val)
+            if beta <= alpha:
+                break
+        return best_val, best_move
+    else:
+        best_val = math.inf
+        for move in moves:
+            val, _ = alphabeta_chess(move, depth - 1, alpha, beta, True)
+            if val < best_val:
+                best_val = val
+                best_move = move
+            beta = min(beta, best_val)
+            if beta <= alpha:
+                break
+        return best_val, best_move
+
+
+if __name__ == "__main__":
+    chess = ChessBoard()
+    val, _ = alphabeta_chess(chess, depth=3, alpha=-math.inf, beta=math.inf, is_maximizing=True)
+    print("Chess Alpha-Beta Evaluation (Depth 3):", val)
