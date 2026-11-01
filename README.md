@@ -1,269 +1,118 @@
-# 🤖 Agents-in-AI
+# Agents in AI !
 
-A practical Python repository for learning and implementing **Artificial Intelligence search techniques and optimization algorithms** through small, understandable examples.
+This repository contains my coursework and practical implementations for the subject **Agents in AI**.
 
-The repository currently focuses on **uninformed search** and **local search / optimization**, with accompanying PowerPoint presentations.
+It is a collection of the programs and concepts I've worked on throughout the course, covering different AI search techniques, optimization methods, game-playing algorithms, constraint satisfaction problems, and real-world applications.
 
-## 📌 Repository Overview
+I've organized everything category-wise to make it easier to navigate.
 
-This project contains implementations for:
+## 📁 Repository Structure
 
-- Exploration vs. Exploitation
-- Hill Climbing Search
-- 8-Queens Problem using Hill Climbing
-- Simulated Annealing for different team-based optimization problems
-- Breadth-First Search (BFS)
-- Depth-First Search (DFS)
-- Depth-Limited Search (DLS)
-- Bidirectional Search
-- Category-wise PowerPoint presentations
+### CATEGORY-1
 
-The repository connects **AI theory with executable Python programs**.
+* `CATEGORY-1.pptx` – Presentation materials.
 
-## 🗂️ Repository Structure
+### CATEGORY-2
 
-| File | Description |
-|---|---|
-| `CAT-3 Exploration & Exploitation.py` | Hill climbing and random-restart search on a state-space landscape |
-| `CAT-3 Hill climbing for 8 Queens Problem.py` | 8-Queens optimization using hill climbing |
-| `CAT-3 Simulator Annealing for diff teams.py` | Simulated annealing for practical optimization problems |
-| `CAT-4 Breadth-First Search.py` | Breadth-First Search implementation |
-| `CAT-4 Depth-First Search.py` | Depth-First Search implementation |
-| `CAT-4 Depth-Limited Search.py` | Depth-Limited Search implementation |
-| `CAT-4 Bidirectional Search.py` | Bidirectional Search implementation |
-| `CATEGORY-1.pptx` | Category 1 presentation |
-| `CATEGORY-2.pptx` | Category 2 presentation |
-| `LICENSE` | MIT License |
+* `CATEGORY-2.pptx` – Presentation materials.
 
-The current `main` branch contains these core Python implementations and presentation files. 
+### CATEGORY-3 – Optimization Techniques
 
-## 🧠 Topics Covered
+* `Exploration & Exploitation.py`
+* `Hill climbing for 8 Queens Problem.py`
+* `Local Beam Search.py`
+* `Simulator Annealing for diff teams.py`
 
-### 1. Exploration and Exploitation
+### CATEGORY-4 – Uninformed Search
 
-Search algorithms balance two competing goals:
+* `Bidirectional Search.py`
+* `Breadth-First Search.py`
+* `Depth-First Search.py`
+* `Depth-Limited Search.py`
 
-- **Exploration:** discover new regions of the search space.
-- **Exploitation:** improve the current promising solution.
+### CATEGORY-5 – Informed Search
 
-The repository demonstrates this using a numerical state-space landscape and **random-restart hill climbing**, which repeatedly starts from different states and keeps the best result found.
+* `A* Search.py`
+* `AO_ Search.py`
+* `Greedy BFS Search.py`
+* `Memory-Bounded Heuristic Search.py`
 
-### 2. Hill Climbing — 8 Queens
+### CATEGORY-6 – Adversarial Search
 
-The **8-Queens Problem** places eight queens on an 8×8 chessboard so that no two queens attack each other.
+* `Alpha-Beta Pruning Algorithm for Chess.py`
+* `Minimax Algorithm for Chess.py`
+* `Minimax Algorithm for Tic-Tac-Toe.py`
 
-The implementation:
+### CATEGORY-7 – Constraint Satisfaction Problems (CSP)
 
-1. Generates neighboring board configurations.
-2. Calculates queen conflicts.
-3. Selects the neighbor with the lowest conflict count.
-4. Stops at `0` conflicts or when no better neighbor exists.
+* `Crypt-Arithmetic Puzzle using Constraint Satisfaction Problem (CSP).py`
+* `Local Search for Constraint Satisfaction Problem (Min-Conflicts Algorithm).py`
+* `Map-Coloring using Constraint Satisfaction Problem (CSP).py`
 
-`0` conflicts represents the desired global optimum, while a state with no better neighbor but remaining conflicts represents a local optimum.
+### CATEGORY-8 – AI Applications
 
-### 3. Simulated Annealing
+* `Autonomous Vehicle.py`
+* `Industrial Manufacturing.py`
+* `Medical Diagnosis.py`
 
-**Simulated Annealing** is a local-search optimization technique that can temporarily accept worse states, helping the search escape local optima.
+### CATEGORY-9
 
-The repository applies it to practical examples:
+* Currently reserved for upcoming coursework and practical work.
 
-- **Project Team — Task Allocation:** distribute workload evenly.
-- **Logistics Team — Route Optimization:** reduce delivery-route distance.
-- **Academic Team — Exam Scheduling:** reduce scheduling conflicts.
+## 🛠️ Technologies Used
 
-The algorithm uses a temperature value and gradually moves from exploration toward exploitation.
+* **Python** – Implementation of AI algorithms and problem-solving techniques.
+* **PowerPoint** – Presentation materials.
+* **Git & GitHub** – Version control and project management.
 
-## 🔎 Uninformed Search
+## 🚀 Running the Programs
 
-Uninformed search algorithms do not use problem-specific heuristic information.
+Most of the practical implementations are written in Python.
 
-### Breadth-First Search — BFS
-
-BFS explores nodes **level by level** using a queue.
-
-### Depth-First Search — DFS
-
-DFS explores one branch as deeply as possible before backtracking.
-
-### Depth-Limited Search — DLS
-
-DLS is DFS with a specified maximum depth, preventing the search from going beyond the chosen limit.
-
-### Bidirectional Search
-
-Bidirectional Search searches from both the start and goal states and attempts to connect the two searches.
-
-## 📊 Algorithm Comparison
-
-| Algorithm | Strategy | Main Data Structure | Typical Strength |
-|---|---|---|---|
-| BFS | Level-by-level | Queue | Shortest path for equal-cost edges |
-| DFS | Deep-first | Stack | Simple and memory-efficient in many cases |
-| DLS | DFS with depth limit | Stack / Recursion | Controls search depth |
-| Bidirectional | From both ends | Two queues | Can reduce effective search depth |
-| Hill Climbing | Improve current state | Neighbor evaluation | Simple optimization |
-| Random-Restart Hill Climbing | Multiple hill climbs | Repeated searches | Better exploration |
-| Simulated Annealing | Probabilistic local search | Temperature schedule | Escapes local optima |
-
-## 🛠️ Requirements
-
-The current programs use the **Python standard library**. No external packages are required.
-
-Recommended:
-
-- Python 3.9+
-- Git
-- VS Code, GitHub Codespaces, or another Python IDE
-
-## 🚀 Getting Started
-
-### Clone the repository
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/Abhishek-enthusiast/Agents-in-AI.git
 ```
 
-### Enter the project directory
+**2. Navigate to the repository**
 
 ```bash
 cd Agents-in-AI
 ```
 
-### Run an algorithm
+**3. Open the category you want to explore**
+
+For example:
 
 ```bash
-python "CAT-4 Breadth-First Search.py"
+cd CATEGORY-4
 ```
 
-## ▶️ Example Commands
-
-### BFS
+**4. Run a Python program**
 
 ```bash
-python "CAT-4 Breadth-First Search.py"
+python "Breadth-First Search.py"
 ```
 
-### DFS
+You can follow the same process for the other Python files.
 
-```bash
-python "CAT-4 Depth-First Search.py"
-```
+Make sure Python is installed on your system before running the programs.
 
-### Depth-Limited Search
+## 🎯 About This Repository
 
-```bash
-python "CAT-4 Depth-Limited Search.py"
-```
+The idea behind this repository is simple: keep all my Agents in AI coursework and implementations organized in one place.
 
-### Bidirectional Search
+Working on these programs has helped me understand how different AI techniques approach problems, from basic graph traversal to intelligent decision-making and real-world applications.
 
-```bash
-python "CAT-4 Bidirectional Search.py"
-```
+I'll continue updating the repository as I work on more topics throughout the course.
 
-### 8-Queens Hill Climbing
-
-```bash
-python "CAT-3 Hill climbing for 8 Queens Problem.py"
-```
-
-### Exploration / Exploitation
-
-```bash
-python "CAT-3 Exploration & Exploitation.py"
-```
-
-### Simulated Annealing
-
-```bash
-python "CAT-3 Simulator Annealing for diff teams.py"
-```
-
-## 🎯 Learning Objectives
-
-After completing the examples, you should be able to:
-
-- Understand state-space search.
-- Implement BFS, DFS, DLS, and Bidirectional Search.
-- Explain local and global optima.
-- Analyze exploration vs. exploitation.
-- Implement hill climbing.
-- Apply hill climbing to the 8-Queens problem.
-- Understand why hill climbing can get trapped in local optima.
-- Use random restarts to improve local search.
-- Implement simulated annealing.
-- Apply optimization to task allocation, routing, and scheduling.
-
-## 📚 Recommended Learning Path
-```
-AI Search Basics
-       ↓
-Breadth-First Search
-       ↓
-Depth-First Search
-       ↓
-Depth-Limited Search
-       ↓
-Bidirectional Search
-       ↓
-State-Space Optimization
-       ↓
-Local vs Global Optimum
-       ↓
-Hill Climbing
-       ↓
-8-Queens Problem
-       ↓
-Exploration vs Exploitation
-       ↓
-Random-Restart Hill Climbing
-       ↓
-Simulated Annealing
-       ↓
-Real-World Optimization
-```
-
-## 💡 Key Concepts
-
-**Local Optimum**  
-A state that is better than its immediate neighbors but may not be the best state in the complete search space.
-
-**Global Optimum**  
-The best possible state in the complete search space.
-
-**Exploration**  
-Searching new or less-explored regions.
-
-**Exploitation**  
-Improving the current promising solution.
-
-**Uninformed Search**  
-Search that does not use additional heuristic information to estimate the distance to the goal.
-
-## 📈 Future Improvements
-
-Possible extensions include:
-
-- A* Search
-- Uniform-Cost Search
-- Iterative Deepening Search
-- Greedy Best-First Search
-- Beam Search
-- Genetic Algorithms
-- Minimax and Alpha-Beta Pruning
-- Search-tree visualization
-- Interactive 8-Queens visualization
-- Runtime and memory benchmarking
-- Automated test cases
-- A unified command-line interface
-
-## License:
-This project is released under the **MIT License**.
-
-## Author-
+## 👨‍💻 Author
 
 **Abhishek**
 
-GitHub: https://github.com/Abhishek-enthusiast
+GitHub: [Abhishek-enthusiast](https://github.com/Abhishek-enthusiast)
 
-Repository: https://github.com/Abhishek-enthusiast/Agents-in-AI
+## 📄 License
+
+This project is licensed under the MIT License.
